@@ -1,5 +1,15 @@
 """Main module."""
 # First: sudo pigpiod
+#load_ext autotime
+import pandas as pd
+import geopandas as gpd
+import geopy
+from geopy.geocoders import Nominatim
+from geopy.extra.rate_limiter import RateLimiter
+import matplotlib.pyplot as plt
+import plotly_express as px
+import tqdm
+from tqdm._tqdm_notebook import tqdm_notebook
 
 from time import sleep
 import pigpio
@@ -35,6 +45,10 @@ def getSN01_data():
 def postGPSDatatoDB():
     pass
 
+# gets the current location of the user as (lat, long)
+def getCurrentLocation():
+    pass
+
 # get last 20 locations from DB. possibly with address
 def getMostRecentLocations():
     pass
@@ -45,8 +59,14 @@ def getTextMessage():
 
 # use lat and long to get address
 def getAddress():
-    pass
+    locator = Nominatim(user_agent="myGeocoder")
+    currentCoordinates = getCurrentLocation
+    #coordinates = "-26.140671, 27.856640"
+    location = locator.reverse(currentCoordinates)
+    location.raw
+    print(location.address)
 
+    
 
 # i edited this to save the data to variables
 def formatData():
@@ -66,4 +86,4 @@ def formatData():
                     print(msg.timestamp, msg.latitude, msg.longitude)
                 except:
                     pass
-        sleep(160) # read data every 2 minutes
+        sleep(120) # read data every 2 minutes
