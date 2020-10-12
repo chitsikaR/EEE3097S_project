@@ -77,7 +77,7 @@ def getAddress():
     #coordinates = "-26.140671, 27.856640"
     location = locator.reverse(currentCoordinates)
     location.raw
-    print(location.address)
+    return (location.address)
 
     
 
