@@ -49,16 +49,21 @@ def getAddress():
 
 
 # i edited this to save the data to variables
-while(True):
-    data = getSN01_data()
-    if data:
-        for t in data:
-            try:
-                msg = pynmea2.parse(t,check=True)
-                currentTime = msg.timestamp
-                currentLat = msg.latitude
-                currentLong = msg.longitude
-                print(msg.timestamp, msg.latitude, msg.longitude)
-            except:
-                pass
-    sleep(160) # read data every 2 minutes
+def formatData():
+    global currentTime
+    global currentLat
+    global currentLong
+
+    while(True):
+        data = getSN01_data()
+        if data:
+            for t in data:
+                try:
+                    msg = pynmea2.parse(t,check=True)
+                    currentTime = msg.timestamp
+                    currentLat = msg.latitude
+                    currentLong = msg.longitude
+                    print(msg.timestamp, msg.latitude, msg.longitude)
+                except:
+                    pass
+        sleep(160) # read data every 2 minutes
