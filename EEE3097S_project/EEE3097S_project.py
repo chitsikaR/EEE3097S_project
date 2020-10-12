@@ -41,22 +41,25 @@ def getSN01_data():
     return None
 
 
-# post GPS data to database
+# post GPS data to database - Rachel
 def postGPSDatatoDB():
     pass
-
+# Rachel
 # gets the current location of the user as (lat, long)
 def getCurrentLocation():
     pass
 
+# Laurentia
 # get last 20 locations from DB. possibly with address
 def getMostRecentLocations():
     pass
 
+# Laurentia
 # generate message as string
 def getTextMessage():
     pass
 
+# Laurentia
 # use lat and long to get address
 def getAddress():
     locator = Nominatim(user_agent="myGeocoder")
