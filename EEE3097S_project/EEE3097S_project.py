@@ -44,6 +44,7 @@ def getSN01_data():
 # post GPS data to database - Rachel
 def postGPSDatatoDB():
     pass
+
 # Rachel
 # gets the current location of the user as (lat, long)
 def getCurrentLocation():
@@ -57,7 +58,16 @@ def getMostRecentLocations():
 # Laurentia
 # generate message as string
 def getTextMessage():
-    pass
+    global currentLat
+    global currentLong
+    global currentTime
+    text_message = "***DISTRESS SIGNAL*** \n"
+    text_message = text_message+"Time: "+currentTime+"\n"
+    text_message = text_message+"I am in danger at:\n"
+    text_message = text_message+getAddress+"\n"
+    text_message = text_message+("Lat: "+ currentLat+" Long: "+ currentLong)
+    return text_message
+    
 
 # Laurentia
 # use lat and long to get address
