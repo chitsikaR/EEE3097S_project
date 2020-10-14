@@ -1,8 +1,11 @@
 """Main module."""
 # First: sudo pigpiod
 #load_ext autotime
+
 import pandas as pd
-import geopandas as gpd
+#import geopandas as gpd
+import json
+import requests
 import geopy
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
@@ -11,9 +14,11 @@ import plotly_express as px
 import tqdm
 from tqdm._tqdm_notebook import tqdm_notebook
 
+
 from time import sleep
 import pigpio
 import pynmea2
+import firebase101
 
 pi = pigpio.pi()
 addr    = 0x42
@@ -43,6 +48,7 @@ def getSN01_data():
 
 # post GPS data to database - Rachel
 def postGPSDatatoDB():
+
     pass
 
 # Rachel
