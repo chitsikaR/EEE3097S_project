@@ -3,7 +3,7 @@
 #load_ext autotime
 
 import pandas as pd
-#import geopandas as gpd
+import geopandas as gpd
 import json
 import requests
 import geopy
