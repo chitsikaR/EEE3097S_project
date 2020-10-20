@@ -3,7 +3,7 @@
 #load_ext autotime
 
 import pandas as pd
-#import geopandas as gpd
+import geopandas as gpd
 import json
 import requests
 import geopy
@@ -12,8 +12,8 @@ from geopy.extra.rate_limiter import RateLimiter
 import matplotlib.pyplot as plt
 import plotly_express as px
 import tqdm
-from tqdm._tqdm_notebook import tqdm_notebook
-
+from tqdm.notebook import tqdm_notebook
+from firebase import firebase
 
 from time import sleep
 import pigpio
@@ -28,6 +28,10 @@ getdata = 0xFF
 global currentTime
 global currentLat
 global currentLong
+global loc
+latitude = "00145"
+longitude = "001889"
+loc = longitude +  "  " + latitude
 
 # get location data from GPS module
 # adapted from https://github.com/xinabox/Python-SN01.git
@@ -48,12 +52,17 @@ def getSN01_data():
 
 # post GPS data to database - Rachel
 def postGPSDatatoDB():
-
+    gps = firebase.post('/Latitude',currentLat)
+    gps2 = firebase.post ('/Longitute', currentLong) 
+    gpsLocation = firebase.post('/Location', loc)
+    print (gpsLocation)
     pass
 
 # Rachel
 # gets the current location of the user as (lat, long)
 def getCurrentLocation():
+    location_ = firebase.get('/Location', '').limitToLast
+    return (location_)
     pass
 
 # Laurentia
