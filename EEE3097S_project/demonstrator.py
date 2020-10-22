@@ -89,6 +89,7 @@ if __name__ == "__main__":
 
         setup()
         print("ready")
+        testAPI.formatData()
         global buzzFlag
         buzzFlag = True
         while buzzFlag:
