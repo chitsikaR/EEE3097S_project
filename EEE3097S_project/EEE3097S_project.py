@@ -29,9 +29,9 @@ global currentTime
 global currentLat
 global currentLong
 global loc
-latitude_test = "0.802"
-longitude_test = "0.004"
-loc = longitude_test +  "  " + latitude_test
+#latitude_test = "0.802"
+#longitude_test = "0.004"
+#loc = longitude_test +  "  " + latitude_test
 firebase = firebase.FirebaseApplication('https://welp-2b4f8.firebaseio.com/', None)
 #new_user = 'Rachel Chitsika','Laurentia Naidu'
 #result = firebase.post('/users', new_user, {'print': 'pretty'}, {'X_FANCY_HEADER': 'VERY FANCY'})
@@ -58,9 +58,10 @@ def getSN01_data():
 
 
 # post GPS data to database - Rachel
-def postGPSDatatoDB():
+def postGPSDatatoDB(latitude_test, longitude_test):
     gps = firebase.post('/Latitude',latitude_test)
-    gps2 = firebase.post ('/Longitute', longitude_test) 
+    gps2 = firebase.post ('/Longitute', longitude_test)
+    loc = longitude_test +  "  " + latitude_test 
     gpsLocation = firebase.post('/Location', loc)
     print (gpsLocation)
     pass
@@ -83,13 +84,13 @@ def getTextMessage():
     global currentLat
     global currentLong
     global currentTime
-    currentLat = float(0.2)
-    currentLong = float(0.24)
-    currentTime = "23:15"
+    #currentLat = float(0.2)
+    #currentLong = float(0.24)
+    #currentTime = "23:15"
     text_message = "***DISTRESS SIGNAL*** \n"
     #text_message = text_message+"Time: "+currentTime+"\n"
     text_message = text_message+"Laurentia is in danger now at:\n"
-    text_message = text_message+getAddress()+"\n"
+#    text_message = text_message+getAddress()+"\n"
     text_message = text_message+("Lat: "+ "{:.2f}".format(currentLat)+" Long: "+"{:.2f}".format(currentLong))
     return text_message
     
@@ -121,11 +122,13 @@ def formatData():
                     currentTime = msg.timestamp
                     currentLat = msg.latitude
                     currentLong = msg.longitude
+                    postGPSDatatoDB(currentLat,currentLong)
                     print(msg.timestamp, msg.latitude, msg.longitude)
                 except:
                     pass
-        sleep(120) # read data every 2 minutes
+        sleep(0.1) # read data every 2 minutes
 
 
-if __name__ == "__main__":
-    postGPSDatatoDB()
+#if __name__ == "__main__":
+ #   formatData()
+    #postGPSDatatoDB()
