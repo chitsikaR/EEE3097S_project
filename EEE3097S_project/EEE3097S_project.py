@@ -37,7 +37,7 @@ token="MLh4BcS6kU2BLgO-MeLYHQ"
 def getAlamanac():
     '''download a GNSS almanac to severely reduce Time-To-First-Fix'''
 
-    almanac_url = f'http://online-live1.services.u-blox.com/GetOnlineData.ashx?token={token};gnss=gps;datatype=eph,alm,aux,pos;filteronpos;format=aid'
+    almanac_url = f"http://online-live1.services.u-blox.com/GetOnlineData.ashx?token={token};gnss=gps;datatype=eph,alm,aux,pos;filteronpos;format=aid"
     request_url = requests.get(almanac_url)
     handle = pi.i2c_open(bus, addr)
     pi.i2c_write_device(handle, request_url.content)
