@@ -28,14 +28,6 @@ EEE3097S\_project.demonstrator module
     :undoc-members:
     :show-inheritance:
 
-EEE3097S\_project.tester module
--------------------------------
-
-.. automodule:: EEE3097S_project.tester
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 
 Module contents
 ---------------
