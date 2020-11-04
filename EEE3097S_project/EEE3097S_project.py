@@ -140,5 +140,5 @@ def formatData():
         sleep(300) # read data every 5 minutes
 
 if __name__ == "__main__":
-    getAlamanac()
+    getAlmanac()
 
