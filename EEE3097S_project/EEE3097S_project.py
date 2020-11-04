@@ -116,7 +116,7 @@ def getAddress():
     return (location.address)
 
 
-# while startFlag is true, data is collected
+# while startFlag is true, data is collected and runs throughout program
 def formatData():
     '''Collects GPS data while the application is running'''
 
