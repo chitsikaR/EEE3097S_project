@@ -20,7 +20,7 @@ Welp project that uses an API, web service and mobile app to send an alert messa
 
 
 * Free software: MIT license
-* Documentation: https://EEE3097S-project.readthedocs.io/en/master
+* Documentation: https://EEE3097S-project.readthedocs.io.
 
 
 Features
