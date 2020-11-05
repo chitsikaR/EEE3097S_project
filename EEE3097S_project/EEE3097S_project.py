@@ -31,7 +31,7 @@ global loc
 firebase = firebase.FirebaseApplication('https://welp-2b4f8.firebaseio.com/', None)
 
 # Alamanac token available at: http://www.u-blox.com/services-form.html
-token="MLh4BcS6kU2BLgO-MeLYHQ"
+token = "MLh4BcS6kU2BLgO-MeLYHQ"
 
 # download GNSS almanac
 def getAlamanac():
@@ -87,10 +87,10 @@ def getMostRecentLocations():
     '''Retrieves a list of the last 24 logged locations i.e the last 2 hours'''
 
     recent_list = firebase.get('/Location', '')
-    return (location_)
+    return (recent_list)
 
 
-# generate message as string
+# generate message with address and coordinates as string
 def getTextMessage():
     '''Compiles a string message with the relevant data'''
 
@@ -98,11 +98,9 @@ def getTextMessage():
     global currentLat
     global currentLong
     global currentTime
-    text_message = '***DISTRESS SIGNAL*** \n'
-    text_message = text_message + 'Laurentia is in danger now at:\n'
     text_message = text_message + getAddress() + '\n'
     text_message = text_message + ('Lat: ' + '{:.2f}'.format(currentLat) +' Long: ' + '{:.2f}'.format(currentLong))
-    return text_message
+    return (text_message)
 
 
 # use lat and long to get address
