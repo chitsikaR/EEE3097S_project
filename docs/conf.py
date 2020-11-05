@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+##!/usr/bin/env python
 #
 # EEE3097S_project documentation build configuration file, created by
 # sphinx-quickstart on Fri Jun  9 13:47:02 2017.
@@ -20,6 +20,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(1, os.path.abspath('../EEE3097S_project/'))
 
 import EEE3097S_project
 

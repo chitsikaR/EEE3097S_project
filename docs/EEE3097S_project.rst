@@ -20,14 +20,6 @@ EEE3097S\_project.cli module
     :undoc-members:
     :show-inheritance:
 
-EEE3097S\_project.demonstrator module
--------------------------------------
-
-.. automodule:: EEE3097S_project.demonstrator
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 
 Module contents
 ---------------
