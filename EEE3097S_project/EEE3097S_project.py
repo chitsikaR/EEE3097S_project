@@ -30,11 +30,11 @@ global currentLong
 global loc
 firebase = firebase.FirebaseApplication('https://welp-2b4f8.firebaseio.com/', None)
 
-# Alamanac token available at: http://www.u-blox.com/services-form.html
+# Almanac token available at: http://www.u-blox.com/services-form.html
 token = "MLh4BcS6kU2BLgO-MeLYHQ"
 
 # download GNSS almanac
-def getAlamanac():
+def getAlmanac():
     '''download a GNSS almanac to severely reduce Time-To-First-Fix'''
 
     almanac_url = f"http://online-live1.services.u-blox.com/GetOnlineData.ashx?token={token};gnss=gps;datatype=eph,alm,aux,pos;filteronpos;format=aid"
