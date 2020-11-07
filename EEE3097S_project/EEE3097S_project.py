@@ -86,7 +86,7 @@ def getCurrentLocation():
 def getMostRecentLocations():
     '''Retrieves a list of the last 24 logged locations i.e the last 2 hours'''
 
-    recent_list = firebase.get('/Location', '')
+    recent_list = firebase.get('/Location', '').limitToLast(24)
     return (recent_list)
 
 
