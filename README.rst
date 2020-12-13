@@ -1,6 +1,6 @@
-============
-CookieCutter
-============
+===========================
+WELP (Women + help) Project
+===========================
 
 
 .. image:: https://img.shields.io/pypi/v/EEE3097S_project.svg
